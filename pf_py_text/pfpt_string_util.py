@@ -31,3 +31,11 @@ class PFPTStringUtil:
     @staticmethod
     def find_and_replace_with(text: str, find: any, replace: any):
         return text.replace(find, replace)
+
+    @staticmethod
+    def human_readable(text: str):
+        text = PFPTStringUtil.camelcase_to(text, " ")
+        text = PFPTStringUtil.find_and_replace_with(text, "-", " ")
+        text = text.strip()
+        text = text.title()
+        return text

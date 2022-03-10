@@ -39,3 +39,12 @@ class PFPTStringUtil:
         text = text.strip()
         text = text.title()
         return text
+
+    @staticmethod
+    def system_readable(text: str):
+        text = PFPTStringUtil.camelcase_to(text, "-")
+        text = PFPTStringUtil.find_and_replace_with(text, " ", "-")
+        text = text.strip()
+        text = text.lower()
+        text = re.sub(r'[^a-zA-Z0-9\-]', '', text)
+        return text

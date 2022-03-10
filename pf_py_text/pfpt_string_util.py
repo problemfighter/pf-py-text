@@ -46,5 +46,5 @@ class PFPTStringUtil:
         text = PFPTStringUtil.find_and_replace_with(text, " ", "-")
         text = text.strip()
         text = text.lower()
-        text = re.sub(r'[^a-zA-Z0-9\-]', '', text)
+        text = re.sub(r'[^a-zA-Z0-9_]', '', text)
         return text

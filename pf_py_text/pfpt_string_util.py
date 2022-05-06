@@ -4,8 +4,8 @@ import re
 class PFPTStringUtil:
 
     @staticmethod
-    def underscore_to_camelcase(word):
-        return ''.join(x.capitalize() or '_' for x in word.split('_'))
+    def underscore_to_camelcase(word, sign="_"):
+        return ''.join(x.capitalize() or sign for x in word.split(sign))
 
     @staticmethod
     def find_replace_into_text(content: str, key_value: dict):

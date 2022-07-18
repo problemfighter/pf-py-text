@@ -1,7 +1,9 @@
 import re
 
 
-class PFPTStringUtil:
+
+
+class StringUtil:
 
     @staticmethod
     def underscore_to_camelcase(word, sign="_"):
@@ -48,3 +50,7 @@ class PFPTStringUtil:
         text = text.lower()
         text = re.sub(r'[^a-zA-Z0-9_]', '', text)
         return text
+
+
+class PFPTStringUtil(StringUtil):
+    pass

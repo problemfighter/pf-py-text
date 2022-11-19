@@ -1,8 +1,6 @@
 import re
 
 
-
-
 class StringUtil:
 
     @staticmethod
@@ -21,6 +19,21 @@ class StringUtil:
     @staticmethod
     def camelcase_to(text: str, to: str = "_"):
         return re.sub(r'(?<!^)(?=[A-Z])', to, text)
+
+    @staticmethod
+    def remove_special_character(text: str, to: str = ""):
+        return re.sub(r'[^\w\s/\-]', to, text)
+
+    @staticmethod
+    def text_to_url_text(text: str):
+        text = PFPTStringUtil.camelcase_to(text, "-")
+        text = PFPTStringUtil.find_and_replace_with(text, " ", "-")
+        text = PFPTStringUtil.find_and_replace_with(text, "_", "-")
+        text = PFPTStringUtil.remove_special_character(text)
+        text = text.strip()
+        text = text.strip("-")
+        text = text.lower()
+        return text
 
     @staticmethod
     def camelcase_to_lower(text: str, to: str = "_"):
